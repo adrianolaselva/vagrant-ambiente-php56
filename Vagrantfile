@@ -14,6 +14,8 @@ Vagrant.configure(2) do |config|
   
   config.vm.network :forwarded_port, guest: 80, host: 8081    	# Apache
   config.vm.network :forwarded_port, guest: 3306, host: 33061 	# Mysql
+  config.vm.network :forwarded_port, guest: 9000, host: 9000 	# XDebug
+  config.vm.network :forwarded_port, guest: 5672, host: 56721 	# RabbitMQ server
   
   config.vm.synced_folder "", "/var/www/html", owner: "root", group: "root"
   

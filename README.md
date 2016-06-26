@@ -15,9 +15,11 @@ Ambiente de desenvolvimento PHP 5.6.23
 ## Configurações padrão
 
 	portas
-		apache  80 	 => 8081
-		ssh 	22 	 => 2222
-		mysql	3306 => 33061
+		apache  		80 	 => 8081
+		ssh 			22 	 => 2222
+		mysql			3306 => 33061
+		XDebug			3306 => 33061
+		rabbitMQ server	5672 => 56721
 		
 	Pastas sincronizadas
 	
@@ -48,6 +50,7 @@ Ambiente de desenvolvimento PHP 5.6.23
 	php-pear
 	phpunit
 	mysql-server-5.6
+	rabbitmq-server
 	composer
 	
 ## Módulos apache habilitados
