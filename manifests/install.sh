@@ -28,6 +28,8 @@ sudo a2enmod rewrite
 sudo mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'"
 sudo mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'"
 sudo echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+#Apache restart
+sudo service apache2 restart
 
 #Configurações do Xdebug
 #mkdir /var/log/xdebug
