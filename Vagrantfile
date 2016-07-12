@@ -5,7 +5,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
   config.vm.provider "virtualbox" do |vb|
-	vb.name = "ntkonline_php_56"
+	vb.name = "lajungle_php_56"
   end
   
   config.ssh.insert_key=false
