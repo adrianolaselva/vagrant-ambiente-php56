@@ -49,6 +49,7 @@ Ambiente de desenvolvimento PHP 5.6.23
 	php5-xcache 
 	php5-curl 
 	php-pear
+	php-soap
 	phpunit
 	mysql-server-5.6
 	rabbitmq-server

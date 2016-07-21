@@ -5,7 +5,7 @@ sudo apt-get install python-software-properties
 sudo apt-get update -y
 #PHP, Apache
 sudo apt-get install apache2 apache2-doc apache2-utils libapache2-mod-php5 -y
-sudo apt-get install php5 php5-fpm php5-cli php5-mysql php5-sybase php5-common -y
+sudo apt-get install php5 php5-fpm php5-cli php5-mysql php5-sybase php5-common php-soap -y
 sudo apt-get install php5-gd php5-mcrypt php5-memcache  php5-odbc -y
 sudo apt-get install php5-xdebug php5-xcache php5-curl php-pear build-essential php5-memcached memcached -y
 sudo apt-get install rabbitmq-server -y
