@@ -48,6 +48,7 @@ Ambiente de desenvolvimento PHP 5.6.23
 	php5-xdebug 
 	php5-xcache 
 	php5-curl 
+	php5-mongo
 	php-pear
 	php-soap
 	phpunit

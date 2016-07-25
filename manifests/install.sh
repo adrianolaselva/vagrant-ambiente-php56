@@ -6,7 +6,7 @@ sudo apt-get update -y
 #PHP, Apache
 sudo apt-get install apache2 apache2-doc apache2-utils libapache2-mod-php5 -y
 sudo apt-get install php5 php5-fpm php5-cli php5-mysql php5-sybase php5-common php-soap -y
-sudo apt-get install php5-gd php5-mcrypt php5-memcache  php5-odbc -y
+sudo apt-get install php5-gd php5-mcrypt php5-memcache php5-odbc php5-mongo -y
 sudo apt-get install php5-xdebug php5-xcache php5-curl php-pear build-essential php5-memcached memcached -y
 sudo apt-get install rabbitmq-server -y
 #PHPUnit
@@ -36,6 +36,14 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 sudo apt-get update -y
 sudo apt-get install -y mongodb-org
+
+sudo cp 
+
+#copia configurações
+cd /vagrant/manifests
+sudo cp etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+sudo chmod 777 /vagrant
+sudo service apache2 restart
 
 #Configurações do Xdebug
 #mkdir /var/log/xdebug

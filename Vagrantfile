@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+system('sudo service apache2 restart')
+
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
@@ -20,6 +22,7 @@ Vagrant.configure(2) do |config|
   
   config.vm.synced_folder "", "/var/www/html", owner: "root", group: "root"
   config.vm.synced_folder "manifests/etc/apache2/sites-enabled", "/etc/apache2/sites-enabled", owner: "root", group: "root"
+  config.vm.synced_folder "manifests/etc/apache2/sites-available", "/etc/apache2/sites-available", owner: "root", group: "root"
   config.vm.synced_folder "manifests/var/apache-solr", "/var/apache-solr", owner: "root", group: "root"
   
   config.vm.provision :shell, :path => "manifests/install.sh"
