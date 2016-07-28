@@ -16,14 +16,11 @@ Vagrant.configure(2) do |config|
   
   config.vm.network :forwarded_port, guest: 80, host: 8081, auto_correct: true    	# Apache
   config.vm.network :forwarded_port, guest: 3306, host: 33061, auto_correct: true 	# Mysql
-  config.vm.network :forwarded_port, guest: 9000, host: 9000, auto_correct: true 	# XDebug
   config.vm.network :forwarded_port, guest: 5672, host: 56721, auto_correct: true 	# RabbitMQ server
   config.vm.network :forwarded_port, guest: 27017, host: 27018, auto_correct: true 	# MongoDB
+  config.vm.network :forwarded_port, guest: 9000, host: 9000, auto_correct: true 	# XDebug
   
   config.vm.synced_folder "", "/var/www/html", owner: "root", group: "root"
-  config.vm.synced_folder "manifests/etc/apache2/sites-enabled", "/etc/apache2/sites-enabled", owner: "root", group: "root"
-  config.vm.synced_folder "manifests/etc/apache2/sites-available", "/etc/apache2/sites-available", owner: "root", group: "root"
-  config.vm.synced_folder "manifests/var/apache-solr", "/var/apache-solr", owner: "root", group: "root"
   
   config.vm.provision :shell, :path => "manifests/install.sh"
   

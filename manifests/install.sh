@@ -28,21 +28,16 @@ sudo a2enmod rewrite
 sudo mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'"
 sudo mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'"
 sudo echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
-#Apache restart
-sudo service apache2 restart
-
 #MongoDB
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 sudo apt-get update -y
 sudo apt-get install -y mongodb-org
-
-sudo cp 
-
-#copia configurações
-cd /vagrant/manifests
-sudo cp etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf
-sudo chmod 777 /vagrant
+#Configurações apache
+sudo sed -i "s/Directory \/var\/www\/html/Directory \/vagrant/g" /etc/apache2/apache2.conf
+sudo sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
+sudo sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/my.cnf
+#Apache restart
 sudo service apache2 restart
 
 #Configurações do Xdebug
