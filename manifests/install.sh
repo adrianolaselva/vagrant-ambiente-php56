@@ -35,7 +35,9 @@ sudo apt-get update -y
 sudo apt-get install -y mongodb-org
 #Configurações apache
 sudo sed -i "s/Directory \/var\/www\/html/Directory \/vagrant/g" /etc/apache2/apache2.conf
+sudo sed -i "s/Directory \/var\/www/Directory \/vagrant/g" /etc/apache2/apache2.conf
 sudo sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
+sudo sed -i "s/\/var\/www\/html/\/vagrant/g" /etc/apache2/sites-enabled/000-default.conf
 sudo sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mysql/my.cnf
 #Apache restart
 sudo service apache2 restart
