@@ -20,6 +20,10 @@ echo "mysql-server-5.6 mysql-server/root_password_again password root" | sudo de
 sudo apt-get -y install mysql-server-5.6
 #Composer Install
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+#npm install
+sudp apt-get install npm
+#gulp cli install
+npm install --global gulp-cli
 #Optimize Apache
 sudo a2enmod dav_fs
 #Habilitar .htaccess no projeto PHP
@@ -29,10 +33,10 @@ sudo mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'"
 sudo mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'"
 sudo echo "USE mysql;\nUPDATE user SET password=PASSWORD('root') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 #MongoDB
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-sudo apt-get update -y
-sudo apt-get install -y mongodb-org
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+#echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+#sudo apt-get update -y
+#sudo apt-get install -y mongodb-org
 #Configurações apache
 sudo sed -i "s/Directory \/var\/www\/html/Directory \/vagrant/g" /etc/apache2/apache2.conf
 sudo sed -i "s/Directory \/var\/www/Directory \/vagrant/g" /etc/apache2/apache2.conf
